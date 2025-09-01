@@ -2,7 +2,7 @@
 
 # Description
 A fun browser based game where you move a basket to catch apples while avoiding raindrops.
-INcludes golden apples for extra points and a hgh score tracker.
+Includes golden apples for extra points and a hgh score tracker.
 
 # How to Play 🕹️
 - CLick the Start Game button to begin.
