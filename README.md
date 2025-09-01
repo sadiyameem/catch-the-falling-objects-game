@@ -33,6 +33,10 @@ Before game starts
 After the game
 <img width="1469" height="744" alt="Screenshot 2025-09-01 at 12 41 57 PM" src="https://github.com/user-attachments/assets/c64235a0-1c49-4a6a-9307-b71b63437ed0" />
 
+[![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
+
+
+
 
 
 Created by Sadiya M
