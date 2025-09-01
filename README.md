@@ -1,8 +1,8 @@
 # Catch the Fallin Objects Game  🍎
 
 # Description
-A fun browser based game where you move a basket to catch apples while avoiding raindrops.
-Includes golden apples for extra points and a hgh score tracker.
+A fun browser-based game where you move a basket to catch apples while avoiding raindrops.
+Includes golden apples for extra points and a high score tracker.
 
 # How to Play 🕹️
 - CLick the Start Game button to begin.
