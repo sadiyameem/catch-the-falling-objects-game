@@ -24,6 +24,11 @@ INcludes golden apples for extra points and a hgh score tracker.
 - Speed increases over time
 - High score tracker (resets when page is refreshed)
 
+# Screensshots
+Before game starts
+<img width="1465" height="742" alt="Screenshot 2025-09-01 at 12 39 25 PM" src="https://github.com/user-attachments/assets/2c60bb46-578b-4c68-86d8-fe1accb02759" />
+
+
 Created by Sadiya M
 
 
