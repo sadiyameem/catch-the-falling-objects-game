@@ -25,6 +25,7 @@ INcludes golden apples for extra points and a hgh score tracker.
 - High score tracker (resets when page is refreshed)
 - You will lose lives when you catch a raindrop or miss any of the apples
 - A Game Over pop will show whne you run out of time or whne your lives are gone
+- When you hover over the button it turns green
 
 # Screensshots
 Before game starts
