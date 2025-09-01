@@ -2,15 +2,28 @@ const basket = document.getElementById('basket');
 const applesContainer = document.querySelector('.game-container');
 const scoreBoard = document.getElementById('score');
 const timeBoard = document.getElementById('time');
+const livesBoard = document.getElementById('lives');
 const startBtn = document.getElementById('startBtn');
 const playAgainBtn = document.getElementById('playAgainBtn');
+const gameWrapper = document.getElementById('gameWrapper');
+
+// Game Over popup elements
+const gameOverPopup = document.getElementById('gameOverPopup');
+const finalScore = document.getElementById('finalScore');
+const closePopupBtn = document.getElementById('closePopupBtn');
+
+// High score (resets on page refresh)
+const highScoreBoard = document.getElementById('highScore');
+let highScore = 0; // always starts at 0
+highScoreBoard.textContent = highScore;
 
 let score = 0;
 let time = 30;
+let lives = 3;
 let gameActive = false;
 let appleInterval;
 let timer;
-let baseSpeed = 4; 
+let baseSpeed = 6; // start faster
 let endGameCleanup; 
 
 function startGame() {
@@ -19,9 +32,11 @@ function startGame() {
 
     score = 0;
     time = 30;
-    baseSpeed = 3; 
+    lives = 3;
+    baseSpeed = 6; // faster starting speed
     scoreBoard.textContent = score;
     timeBoard.textContent = time;
+    livesBoard.textContent = "❤️".repeat(lives);
 
     basket.style.left = (applesContainer.offsetWidth / 2 - basket.offsetWidth / 2) + 'px';
 
@@ -40,10 +55,10 @@ function startGame() {
         time--;
         timeBoard.textContent = time;
         if (time <= 0) endGame();
-        baseSpeed += 0.05;
+        baseSpeed += 0.1;
     }, 1000);
 
-    appleInterval = setInterval(createApple, 800);
+    appleInterval = setInterval(createFallingObject, 400); // apples appear more often
 }
 
 function endGame() {
@@ -51,7 +66,18 @@ function endGame() {
     clearInterval(timer);
     clearInterval(appleInterval);
     if (endGameCleanup) endGameCleanup();
-    document.querySelectorAll('.apple, .golden').forEach(a => a.remove());
+    document.querySelectorAll('.apple, .golden, .raindrop').forEach(a => a.remove());
+    gameWrapper.classList.remove("blurred");
+
+    // Show Game Over popup
+    finalScore.textContent = score;
+    gameOverPopup.style.display = 'block';
+
+    // Update high score
+    if(score > highScore){
+        highScore = score;
+        highScoreBoard.textContent = highScore;
+    }
 }
 
 playAgainBtn.addEventListener('click', () => {
@@ -59,48 +85,71 @@ playAgainBtn.addEventListener('click', () => {
         clearInterval(timer);
         clearInterval(appleInterval);
         if (endGameCleanup) endGameCleanup();
-        document.querySelectorAll('.apple, .golden').forEach(a => a.remove());
+        document.querySelectorAll('.apple, .golden, .raindrop').forEach(a => a.remove());
+        gameWrapper.classList.remove("blurred");
     }
     startGame();
 });
 
-function createApple() {
-    const apple = document.createElement('div');
-    const isGolden = Math.random() < 0.2;
-    if (isGolden) apple.classList.add('golden');
-    else {
-        apple.classList.add('apple');
+// Close popup button
+closePopupBtn.addEventListener('click', () => {
+    gameOverPopup.style.display = 'none';
+});
+
+function createFallingObject() {
+    const obj = document.createElement('div');
+    const rand = Math.random();
+
+    let isGolden = false;
+    let isRaindrop = false;
+
+    if (rand < 0.15) {
+        obj.classList.add('raindrop');
+        isRaindrop = true;
+    } else if (rand < 0.35) {
+        obj.classList.add('golden');
+        isGolden = true;
+    } else {
+        obj.classList.add('apple');
         const shine = document.createElement('div');
         shine.classList.add('shine');
-        apple.appendChild(shine);
+        obj.appendChild(shine);
     }
-    apple.style.top = '-30px';
-    apple.style.left = Math.random() * (applesContainer.offsetWidth - 30) + 'px';
-    applesContainer.appendChild(apple);
 
-    let speed = baseSpeed; 
-    let speedIncrement = 0.03; 
+    obj.style.top = '-30px';
+    obj.style.left = Math.random() * (applesContainer.offsetWidth - 30) + 'px';
+    applesContainer.appendChild(obj);
+
+    let speed = baseSpeed;
+    let speedIncrement = 0.05; // falls faster over time
 
     const fallInterval = setInterval(() => {
-        let appleTop = parseInt(apple.style.top);
-        apple.style.top = appleTop + speed + 'px';
+        let objTop = parseInt(obj.style.top);
+        obj.style.top = objTop + speed + 'px';
 
         const basketRect = basket.getBoundingClientRect();
-        const appleRect = apple.getBoundingClientRect();
+        const objRect = obj.getBoundingClientRect();
 
         if (
-            appleRect.bottom >= basketRect.top &&
-            appleRect.left < basketRect.right &&
-            appleRect.right > basketRect.left
+            objRect.bottom >= basketRect.top &&
+            objRect.left < basketRect.right &&
+            objRect.right > basketRect.left
         ) {
-            score += isGolden ? 5 : 1;
-            scoreBoard.textContent = score;
-            apple.remove();
+            if (isRaindrop) {
+                loseLife();
+                gameWrapper.classList.add("blurred");
+                setTimeout(() => gameWrapper.classList.remove("blurred"), 2000);
+            } else {
+                score += isGolden ? 5 : 1;
+                scoreBoard.textContent = score;
+            }
+            obj.remove();
             clearInterval(fallInterval);
         }
 
-        if (appleTop > applesContainer.offsetHeight) {
-            apple.remove();
+        if (objTop > applesContainer.offsetHeight) {
+            if (!isRaindrop) loseLife();
+            obj.remove();
             clearInterval(fallInterval);
         }
 
@@ -108,7 +157,24 @@ function createApple() {
     }, 20);
 }
 
+// Lose life function
+function loseLife() {
+    lives--;
+    livesBoard.textContent = "❤️".repeat(lives);
+    if (lives <= 0) {
+        endGame();
+    }
+}
+
 startBtn.addEventListener('click', startGame);
+
+
+
+
+
+
+
+
 
 
 
