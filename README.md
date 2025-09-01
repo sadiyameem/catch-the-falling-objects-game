@@ -28,6 +28,9 @@ INcludes golden apples for extra points and a hgh score tracker.
 # Screensshots
 Before game starts
 <img width="1465" height="742" alt="Screenshot 2025-09-01 at 12 39 25 PM" src="https://github.com/user-attachments/assets/2c60bb46-578b-4c68-86d8-fe1accb02759" />
+After the game
+<img width="1469" height="744" alt="Screenshot 2025-09-01 at 12 41 57 PM" src="https://github.com/user-attachments/assets/c64235a0-1c49-4a6a-9307-b71b63437ed0" />
+
 
 
 Created by Sadiya M
