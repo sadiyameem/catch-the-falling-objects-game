@@ -23,6 +23,7 @@ INcludes golden apples for extra points and a hgh score tracker.
 - Golden apples and regular apples
 - Speed increases over time
 - High score tracker (resets when page is refreshed)
+- You will lose lives when you catch a raindrop or miss any of the apples
 
 # Screensshots
 Before game starts
