@@ -1,36 +1,18 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Catch the Apples 🍎</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css"/>
+    <script src="script.js"></script>
+    <title>Catch The Falling Object Game</title>
 </head>
 <body>
-    <div id="gameWrapper">
-        <h1>🧺 Catch the Apples! 🍎</h1>
-        <div class="scoreboard">
-            <div>Score: <span id="score">0</span></div>
-            <div>Time: <span id="time">30</span>s</div>
-            <div>Lives: <span id="lives">❤️❤️❤️</span></div>
-            <div>High Score: <span id="highScore">0</span></div>
-        </div>
-        <div class="game-container">
-            <div id="basket"></div>
-            <div id="apples-container"></div>
-        </div>
-        <div class="buttons">
-            <button id="startBtn">Start Game</button>
-            <button id="playAgainBtn">Play Again</button>
-        </div>
+    <div id="game-container">
+        <div id="player"></div>
+        <div id="score">Score: 0</div>
     </div>
-
-    <div id="gameOverPopup" class="popup">
-        <h2>Game Over 😢</h2>
-        <p>Your score: <span id="finalScore">0</span></p>
-        <button id="closePopupBtn">Close</button>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
+</DOCTYPE>
 

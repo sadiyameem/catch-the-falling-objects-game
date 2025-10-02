@@ -1,224 +1,52 @@
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: url('forest background.png');
-    background-size: cover;
     margin: 0;
-    padding: 20px;
-    color: white;
-}
-
-h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    text-shadow: 1px 1px 2px #000;
-}
-
-.scoreboard {
     display: flex;
-    justify-content: space-around;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+    background-color: green;
+    color: black;
+    font-family: Arial, sans-serif;
 }
 
-.game-container {
+#game-container {
     position: relative;
-    width: 500px;
-    height: 400px;
-    margin: 0 auto;
-    border: 2px solid rgba(255,255,255,0.2);
+    width: 400px;
+    height: 600px;
+    border: 2px solid white;
     overflow: hidden;
-    background: rgba(0,0,0,0.2);
-    border-radius: 10px;
 }
 
-#basket {
-    width: 80px;
-    height: 50px;
+#player {
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     left: 50%;
-    transform: translateX(-50%);
-    border-radius: 0 0 15px 15px;
-    border: 2px solid rgba(90,45,12,0.5);
-    background-color: #8b4513;
-    background-image:
-        linear-gradient(45deg, #a0522d 2px, transparent 2px),
-        linear-gradient(-45deg, #a0522d 2px, transparent 2px);
-    background-size: 10px 10px;
-    box-shadow: inset 0 -3px 5px rgba(0,0,0,0.3);
-}
-
-#basket::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 6px;
+    width: 60px;
     height: 40px;
-    background-color: #5a2d0c;
-    border-radius: 3px;
-    box-shadow: 0 0 2px rgba(0,0,0,0.5);
+    background: linear-gradient(to bottom, brown);
+    border: 3px solid brown;
+    border-radius: 0 0 20px 20px;
+    box-shadow: inset 0 -5px 5px brown;
+    transform: translateX(-50%);
 }
-
-.apple, .golden {
+.falling-object {
+    position: absolute;
+    top: 0;
     width: 30px;
-    height: 30px;          
-    border-radius: 50%; 
-    position: absolute;
-    top: -35px;
-    border: 2px solid rgba(255,255,255,0.15);
-}
-
-.apple {
-    background: red;
-    border-color: rgba(153,0,0,0.3);
-    box-shadow: inset -2px -2px 4px #800, 2px 2px 3px #f00; 
-}
-
-.apple::before {
-    content: '';
-    position: absolute;
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 6px;
-    background: green;
-    border-radius: 2px;
-}
-
-.apple::after {
-    content: '';
-    position: absolute;
-    top: -7px;
-    left: 60%;
-    width: 6px;
-    height: 3px;
-    background: linear-gradient(to top left, #4caf50, #81c784);
-    border-radius: 3px 3px 0 3px;
-    transform: rotate(-20deg);
-}
-
-.apple .shine {
-    position: absolute;
-    top: 5px;
-    left: 7px;
-    width: 8px;
-    height: 5px;
-    background: rgba(255,255,255,0.6);
+    height: 30px;
     border-radius: 50%;
-    transform: rotate(-20deg);
+    background-color: red;
 }
 
-.golden {
-    background: #ffd700; 
-    border-color: rgba(184,134,11,0.3);
-    box-shadow: inset -2px -2px 4px #daa520, 2px 2px 3px #fff8dc; 
-}
-
-.golden::before {
-    content: '';
+#score {
     position: absolute;
-    top: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 4px;
-    height: 6px;
-    background: brown;
-    border-radius: 2px;
-}
-
-.golden::after {
-    content: '';
-    position: absolute;
-    top: -7px;
-    left: 60%;
-    width: 6px;
-    height: 3px;
-    background: linear-gradient(to top left, #4caf50, #81c784);
-    border-radius: 3px 3px 0 3px;
-    transform: rotate(-20deg);
-}
-
-.golden .shine {
-    position: absolute;
-    top: 5px;
-    left: 7px;
-    width: 8px;
-    height: 5px;
-    background: rgba(255,255,255,0.6);
-    border-radius: 50%;
-    transform: rotate(-20deg);
-}
-
-.buttons {
-    margin-top: 15px;
-}
-
-.buttons button {
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    border: 2px solid #4caf50;
-    border-radius: 8px;
-    background: transparent;
+    top: 10px;
+    left: 10px;
+    font-size: 1.5rem;
     color: white;
-    margin: 0 5px;
-    transition: 0.3s;
-}
-
-.buttons button:hover {
-    background: #4caf50;
 }
 
 
-.raindrop {
-    width: 15px;
-    height: 25px;
-    background: #1e90ff;
-    position: absolute;
-    top: -30px;
-    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; 
-    box-shadow: inset -2px -4px 6px rgba(0,0,100,0.4);
-}
-
-
-.blurred {
-    filter: blur(4px);
-}
-
-.popup {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.9);
-    color: white;
-    padding: 30px 50px;
-    border-radius: 15px;
-    display: none;
-    text-align: center;
-    z-index: 10;
-    box-shadow: 0 0 15px #000;
-}
-
-.popup button {
-    margin-top: 15px;
-    padding: 10px 20px;
-    font-size: 1rem;
-    border-radius: 8px;
-    border: 2px solid #4caf50;
-    background: transparent;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-.popup button:hover {
-    background: #4caf50;
-}
 
 
 
