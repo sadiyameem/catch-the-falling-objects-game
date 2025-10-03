@@ -50,15 +50,9 @@ function createFallingObjects(){
             clearInterval(objectInterval);
         }
 
-        if (missedCount >= maxMisees)
+        if (missedCount >= maxMisees);
         gameOver();
     }, 30);
-}
-
-// game over
-function gameOver(){
-    alert('Game over! You missed too many')
-    window.location.reload();
 }
 setInterval(createFallingObjects, 1500);
 

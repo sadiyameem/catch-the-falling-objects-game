@@ -4,8 +4,8 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #333;
-    color: #fff;
+    background-image: url('leafs.jpg');
+    color: white;
     font-family: Arial, sans-serif;
 }
 
@@ -13,9 +13,9 @@ body {
     position: relative;
     width: 400px;
     height: 600px;
-    border: 2px solid #333;
+    border: 2px solid black;
     overflow: hidden;
-    background: linear-gradient(to bottom, #87ceeb, #fff)
+    background-color: beige;
 }
 
 #player {
@@ -24,10 +24,10 @@ body {
     left: 50%;
     width: 60px;
     height: 40px;
-    background: linear-gradient(to bottom, #8b4513, #cd853f);
-    border: 3px solid #854513;
+    background: brown;
+    border: 3px solid brown;
     border-radius: 0 0 20px 20px;
-    box-shadow: inset 0 -5px 5px rgba(0,0,0,0.3);
+    box-shadow: inset 0 -5px 5px black;
     transform: translateX(-50%);
 }
 .falling-object {
@@ -36,7 +36,7 @@ body {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: green;
+    background-color: maroon;
 }
 
 #score {
@@ -44,7 +44,7 @@ body {
     top: 10px;
     left: 10px;
     font-size: 1.5rem;
-    color: #8b4513;
+    color: black;
 }
 
 
