@@ -47,6 +47,17 @@ body {
     color: black;
 }
 
+button {
+    background-color: beige;
+    color: black;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+}
+
 
 
 

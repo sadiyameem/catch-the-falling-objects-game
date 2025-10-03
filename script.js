@@ -1,10 +1,12 @@
 const player = document.getElementById('player');
 const gameContainer = document.getElementById('game-container');
 const scoreEl = document.getElementById('score');
+const startButton = document.getElementById('start-button');
 let playerPosition = 175;
 let missedCount = 0;
 const maxMisses = 8;
 let score = 0;
+let objectSpawner;
 
 
 // move players with arrow keys
@@ -50,11 +52,25 @@ function createFallingObjects(){
             clearInterval(objectInterval);
         }
 
-        if (missedCount >= maxMisees);
-        gameOver();
+        if (missedCount >= maxMisses) {
+            gameOver();
+            clearInterval(objectInterval);
+        }
     }, 30);
 }
-setInterval(createFallingObjects, 1500);
+
+// start game
+function startGame() {
+    score = 0;
+    missedCount = 0;
+    scoreEl.textContent = `Score: ${score}`;
+
+    clearInterval(objectSpawner);
+
+    objectSpawner = setInterval(createFallingObjects, 1500);
+}
+
+startButton.addEventListener('click', startGame);
 
 
 
