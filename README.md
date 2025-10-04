@@ -24,7 +24,7 @@ The goal is to catch as many objects as possible without missing too many.
 
 # Motivation, Challenges, and Learning
 I made this because I made a similar project in Girls Who Code when I first started the program and I wanted to make another one. 
-I learned how to add game buttons. 
+I learned how to make a functioning game of my choice. 
 A challenging part was to make the buttons work properly.
 
 [![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
