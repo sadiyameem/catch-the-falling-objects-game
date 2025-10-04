@@ -2,11 +2,13 @@ const player = document.getElementById('player');
 const gameContainer = document.getElementById('game-container');
 const scoreEl = document.getElementById('score');
 const startButton = document.getElementById('start-game');
+const stopButton = document.getElementById('stop-game');
+
 let playerPosition = 175;
 let missedCount = 0;
 const maxMisses = 8;
 let score = 0;
-let objectSpawner;
+let fallingInterval = null;
 
 
 // move players with arrow keys
@@ -65,12 +67,33 @@ function startGame() {
     missedCount = 0;
     scoreEl.innerHTML = "Score: " + score;
 
-    clearInterval(objectSpawner);
-    objectSpawner = setInterval(createFallingObjects, 1500);
+    if (fallingInterval !== null) {
+        clearInterval(fallingInterval);
+    }
+
+    fallingInterval = setInterval(createFallingObjects, 1500);
+}
+
+// stop game
+function stopGame() {
+    if (fallingInterval !== null) {
+        clearInterval(fallingInterval);
+        fallingInterval = null;
+    }
+    alert("Game stopped!");
+}
+
+// game over function
+function gameOver() {
+    if (fallingInterval !== null) {
+        clearInterval(fallingInterval);
+        fallingInterval = null;
+    }
+    alert("GameOver! Your score: " + score);
 }
 
 startButton.addEventListener('click', startGame);
-
+stopButton.addEventListener('click', stopGame);
 
 
 

@@ -16,6 +16,7 @@ body {
     border: 2px solid black;
     overflow: hidden;
     background-color: beige;
+    margin: 3px;
 }
 
 #player {
@@ -55,7 +56,6 @@ button {
     border: none;
     border-radius: 8px;
     cursor: pointer;
-
 }
 
 
