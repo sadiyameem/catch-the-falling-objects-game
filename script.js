@@ -1,7 +1,7 @@
 const player = document.getElementById('player');
 const gameContainer = document.getElementById('game-container');
 const scoreEl = document.getElementById('score');
-const startButton = document.getElementById('start-button');
+const startButton = document.getElementById('start-game');
 let playerPosition = 175;
 let missedCount = 0;
 const maxMisses = 8;
@@ -63,10 +63,9 @@ function createFallingObjects(){
 function startGame() {
     score = 0;
     missedCount = 0;
-    scoreEl.textContent = `Score: ${score}`;
+    scoreEl.innerHTML = "Score: " + score;
 
     clearInterval(objectSpawner);
-
     objectSpawner = setInterval(createFallingObjects, 1500);
 }
 
