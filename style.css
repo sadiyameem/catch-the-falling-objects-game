@@ -17,6 +17,7 @@ body {
     overflow: hidden;
     background-color: beige;
     margin: 3px;
+    border-color: brown;
 }
 
 #player {
