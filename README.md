@@ -1,4 +1,4 @@
-# Catch The Falling Objects Game
+# 🕹️ Catch The Falling Objects Game 🎮 🕹️
 
 # Description
 This is a simple browser game where players control a basket to catch falling objects. 
