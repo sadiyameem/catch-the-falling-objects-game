@@ -24,8 +24,8 @@ The goal is to catch as many objects as possible without missing too many.
 
 # Motivation, Challenges, and Learning
 I made this because I made a similar project in Girls Who Code when I first started the program and I wanted to make another one. 
-I learned how to make a functioning game of my choice. 
-A challenging part was to make the buttons work properly.
+I learned how to make a functioning game of my choice and used the skills I leanred from GWC. 
+A challenging part was to make the buttons work properly and choosing the right colors.
 
 Created by Sadiya
 
