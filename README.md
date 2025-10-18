@@ -27,6 +27,8 @@ I made this because I made a similar project in Girls Who Code when I first star
 I learned how to make a functioning game of my choice. 
 A challenging part was to make the buttons work properly.
 
+Created by Sadiya
+
 [![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
 
 
