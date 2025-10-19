@@ -21,6 +21,7 @@ The goal is to catch as many objects as possible without missing too many.
 - Objects appear randomly
 - Catching objects increases score
 - Start and Stop buttons
+- A pop sound for everytime the basket gets the objects
 
 # Motivation, Challenges, and Learning
 I made this because I made a similar project in Girls Who Code when I first started the program and I wanted to make another one. 
