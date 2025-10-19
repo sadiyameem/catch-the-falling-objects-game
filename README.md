@@ -23,12 +23,17 @@ The goal is to catch as many objects as possible without missing too many.
 - Start and Stop buttons
 - A pop sound for everytime the basket gets the objects
 
-# Motivation, Challenges, and Learning
+# Motivation
 I made this because I made a similar project in Girls Who Code when I first started the program and I wanted to make another one. 
+
+# Learning/Challenge
 I learned how to make a functioning game of my choice and used the skills I leanred from GWC. 
 A challenging part was to make the buttons work properly and choosing the right colors.
 
 Created by Sadiya
+
+# Credits
+https://pixabay.com/ --> For image and sound
 
 [![Athena Award Badge](https://img.shields.io/endpoint?url=https%3A%2F%2Faward.athena.hackclub.com%2Fapi%2Fbadge)](https://award.athena.hackclub.com?utm_source=readme)
 
