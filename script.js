@@ -10,6 +10,7 @@ let missedCount = 0;
 const maxMisses = 8;
 let score = 0;
 let fallingInterval = null;
+let activeObjects = [];
 
 
 // move players with arrow keys
@@ -48,24 +49,24 @@ function createFallingObjects(){
 
             // sound
             catchSound.play();
-
             object.remove();
             clearInterval(objectInterval);
             object.remove();
-            clearInterval(objectInterval);
+            activeObjects = activeObjects.filter(i => i !== objectInterval);
         }
 
         if (objectPosition > 600) {
             missedCount++;
             object.remove();
             clearInterval(objectInterval);
+            activeObjects = activeObjects.filter(i => i !== objectInterval);
         }
 
         if (missedCount >= maxMisses) {
             gameOver();
-            clearInterval(objectInterval);
         }
     }, 30);
+    activeObjects.push(objectInterval);
 }
 
 // start game
@@ -87,7 +88,15 @@ function stopGame() {
         clearInterval(fallingInterval);
         fallingInterval = null;
     }
-    alert("Game stopped!");
+
+// stop all falling balls
+activeObjects.forEach(interval => clearInterval(interval));
+activeObjects = [];
+
+// remove all remaining balls
+document.querySelectorAll('.falling-object').forEach(obj => obj.remove());
+
+alert("Game stopped!");
 }
 
 // game over function
