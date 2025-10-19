@@ -3,6 +3,7 @@ const gameContainer = document.getElementById('game-container');
 const scoreEl = document.getElementById('score');
 const startButton = document.getElementById('start-game');
 const stopButton = document.getElementById('stop-game');
+const catchSound = new Audio('bubblepop.mp3');
 
 let playerPosition = 175;
 let missedCount = 0;
@@ -44,6 +45,12 @@ function createFallingObjects(){
         ) {
             score++;
             scoreEl.textContent = `Score: ${score}`;
+
+            // sound
+            catchSound.play();
+
+            object.remove();
+            clearInterval(objectInterval);
             object.remove();
             clearInterval(objectInterval);
         }
